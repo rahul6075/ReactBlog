@@ -1,0 +1,77 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color:lightgrey;
+    padding: 2rem 3.5rem;
+    font-family:   'Urbanist', sans-serif;
+   
+}
+
+.footer_wrapper{
+    display: flex;
+    /* padding-right: 0.5rem; */
+    color: gray;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 750px){
+    .footer_wrapper{
+        flex-direction: column;
+    }
+}
+.about{
+  flex: 6;
+}
+
+.news_update{
+   flex: 3;
+}
+
+.socialmedia{
+   flex: 3;
+}
+
+.heading{
+   font-size: 25px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   padding-bottom: 10px;
+}
+.desc{
+   font-size: 18px;
+  
+}
+
+.section{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    
+}
+.input{
+    color: gray;
+    border: none;
+    padding: 8px 13px;
+    font-weight: 600;
+}
+.input:focus{
+    outline: none;
+}
+
+.social_icon{
+    display: flex;
+    color: teal;
+     cursor: pointer;
+}
+.youtube{
+    margin: 0 1px;
+    color: red;
+    cursor: pointer;
+}
+.trademark{
+    display: flex;
+    align-items: center;
+     margin: 1rem auto;
+     padding-top: 1rem;
+     color: black;
+
+}

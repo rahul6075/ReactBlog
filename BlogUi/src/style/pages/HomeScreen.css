@@ -1,0 +1,19 @@
+.homeScreen{
+    background-color: white;
+}
+.post_section{
+    display: grid;
+    grid-template-columns: 60% 30%;
+    gap: 30px;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 750px){
+    
+
+    .post_section{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+
+}

@@ -1,0 +1,21 @@
+.login{
+    display: flex;
+    font-family:   'Urbanist', sans-serif;
+}
+
+.login_wraper{
+    margin: 5rem auto;
+    width:40vw;
+    padding:1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login_title{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.link{
+    margin-top: 0.5rem;
+}

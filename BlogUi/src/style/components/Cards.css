@@ -1,0 +1,62 @@
+::-webkit-scrollbar {
+    display: none;
+}
+.cards_container{
+    background: url('../images/Abract01.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 90vh;
+    width: 100%;
+    background-size: 65%;
+    
+
+}
+
+.cards_post{
+    display: flex;
+    padding-top: 6rem;
+    overflow-x: scroll;
+    max-width: 95%;
+    margin: 0 auto;
+    
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    text-align: center;  
+    width: 80%;
+    margin: 3rem 2rem;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+   
+}
+
+.card_img{
+    object-fit: cover;
+    height:30vh;
+    width: 44vh;
+}
+.card_desc{
+     margin: 1rem auto;
+     font-family: sans-serif;
+     padding-right: 1rem;
+     max-width: 38vh;
+}
+.card_btn{
+    width: 15vh;
+    border: 1px solid gray;
+    border-radius: 25px;
+    font-size: larger;
+    font-weight: bold;
+    padding:0.8rem 2rem;
+    margin: 0.1rem auto;
+    background-color:pink ;
+}
+.card_btn:hover{
+    background-color:transparent ;
+    opacity: 0.8
+}
+.card_time{
+    margin: 1rem auto;
+    font-weight: normal;
+    font-family: sans-serif;
+}
