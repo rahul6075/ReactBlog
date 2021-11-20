@@ -16,7 +16,7 @@ if (process.env.NODE_ENV == "development") {
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);

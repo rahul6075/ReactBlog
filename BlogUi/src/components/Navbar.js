@@ -2,9 +2,10 @@ import { SearchOutlined } from '@material-ui/icons';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../style/components/Navbar.css";
-
+import {useSelector} from 'react-redux'
 function Navbar() {
      const user = false;
+
     return (
         <div className="navbar">
             <div className="navbar_left">
@@ -46,7 +47,7 @@ function Navbar() {
                          <Link to="/signup" className="link_style"> Signup</Link>
                     </li>
                     <li className="navbar_item">
-                    <Link to="/login" className="link_style"> Login</Link>
+                    <Link to="/login" className="link_style">Login</Link>
                     </li>
                       </ul>
                 )}

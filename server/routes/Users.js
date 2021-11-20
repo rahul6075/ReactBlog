@@ -13,7 +13,7 @@ const {
 // @router POST /api/users
 // @access public
 
-router.post("/register", signupValidator, runValidation, registerUser);
+router.post("/register", registerUser);
 router.post("/login", signinValidator, runValidation, loginUser);
 router.put("/update", protect, updateUser);
 router.delete("/delete", protect, deleteUser);
