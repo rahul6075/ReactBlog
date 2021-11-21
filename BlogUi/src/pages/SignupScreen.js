@@ -5,9 +5,9 @@ import { login } from "../redux/userapiCalls";
 
 function SignupScreen() {
   const [formData, setformData] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: "Gulshan Gupta",
+    email: "admin@gmail.com",
+    password: "456123",
   });
   const dispatch = useDispatch();
   const { name, email, password } = formData;
