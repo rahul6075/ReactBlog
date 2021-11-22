@@ -2,13 +2,44 @@ const User = require("../models/Users");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// @desc  POST register new user
-// @router POST /api/users
-// @access public
-
+/**
+ *
+ * @param {*} req
+ * @param {*} res
+ * @returns {token,message}
+ */
 exports.registerUser = async (req, res) => {
-  
-}
+  const { name, email, password } = req.body;
+  try {
+    let user = await User.findOne({ email }).exec();
+    if (user) {
+      return res.status(409).json({ error: "User Already exists." });
+    }
+    user = new User({
+      name,
+      email,
+      password,
+    });
+    const salt = await bcrypt.genSalt(10);
+
+    user.password = await bcrypt.hash(password, salt);
+
+    await user.save();
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: "30d",
+    });
+    return res
+      .status(200)
+      .json({ token, message: "user registred succssfully" });
+  } catch (e) {
+    return res.status(500).json(e.message);
+  }
+};
 
 // @desc  POST  login user
 // @router POST /api/users
