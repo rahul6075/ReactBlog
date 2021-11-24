@@ -41,10 +41,6 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-// @desc  POST  login user
-// @router POST /api/users
-// @access public
-
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -81,10 +77,6 @@ exports.loginUser = async (req, res) => {
   }
 };
 
-// @desc  POST update user
-// @router POST /api/users
-// @access private
-
 exports.updateUser = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).exec();
@@ -92,7 +84,6 @@ exports.updateUser = async (req, res) => {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
       user.password = req.body.password || user.password;
-      user.profilePic = req.body.profilePic || user.profilePic;
       const updateUser = await user.save();
 
       return res.json({
@@ -102,7 +93,6 @@ exports.updateUser = async (req, res) => {
         profilePic: updateUser.profilePic,
       });
     }
-    //  console.log(user);
     res.status(404).json("User not found");
   } catch (error) {
     return res.status(500).json({
@@ -111,23 +101,15 @@ exports.updateUser = async (req, res) => {
   }
 };
 
-// @desc  POST delete user account
-// @router POST /api/users
-// @access private
-
-exports.deleteUser = async (req, res) => {
+exports.updateprofile = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id);
-    if (user) {
-      await user.remove();
-      return res.json({
-        message: "User Account deleted",
-      });
-    }
-    res.status(404).json("User not found");
+    const profile = await User.findOneAndUpdate(
+      { _id: req.user._id },
+      { $set: { profilePic: req.file.path } },
+      { new: true }
+    );
+    return res.json(profile);
   } catch (error) {
-    return res.status(500).json({
-      error: "Server Error",
-    });
+    return res.status(500).json(error.message);
   }
 };

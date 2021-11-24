@@ -2,6 +2,7 @@
 /.env/node_modules
 # testin
 /server/node_modules
+/server/uploads
 
 # production
 /server/build

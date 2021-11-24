@@ -1,10 +1,6 @@
 const Post = require("../models/Post");
 const User = require("../models/Users");
 
-// @desc  POST create new post
-// @router POST /api/posts
-// @access private
-
 exports.createPost = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
